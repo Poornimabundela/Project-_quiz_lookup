@@ -1,0 +1,443 @@
+/* Home.css */
+
+.container1 {
+  max-width: 1400px;
+  margin: 0 auto;
+  padding: 20px;
+  background-color: #1f5388;
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.header-section {
+  margin-bottom: 30px;
+}
+
+.banner {
+  background-color: #43576b; /* Blue color for the banner */
+  color: #61bcd8; /* White text color */
+  padding: 20px; /* Padding inside the banner */
+  text-align: center; /* Center align text */
+}
+
+.banner h1 {
+  font-size: 36px; /* Large font size for the heading */
+  margin-bottom: 10px; /* Space below the heading */
+}
+
+.banner p {
+  font-size: 18px; /* Font size for the paragraph */
+  margin-bottom: 0; /* Remove default bottom margin */
+}
+.logo-image {
+  width: 70px;
+  height: 70px;
+  border-radius: 50%;
+  object-fit: cover;
+}
+
+.user-info-container {
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+}
+
+.username {
+  margin-right: 10px;
+  font-weight: bold;
+}
+
+.nav-link {
+  margin-right: 10px;
+  text-decoration: none;
+  color: #333;
+  font-weight: bold;
+}
+
+.logout-button {
+  padding: 10px 20px;
+  background-color: #dc3545;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.logout-button:hover {
+  background-color: #c82333;
+}
+
+.box-container {
+  display: flex;
+  justify-content: space-around;
+  margin-top: 30px;
+}
+
+.box {
+  text-align: center;
+  padding: 20px;
+  border-radius: 10px;
+  background-color: #ffffff;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s ease;
+}
+
+.box:hover {
+  transform: translateY(-5px);
+}
+
+.box h2 {
+  font-size: 24px;
+  margin-bottom: 10px;
+}
+
+.box p {
+  color: #666666;
+}
+
+.link-button {
+  padding: 10px 20px;
+  background-color: #007bff;
+  color: white;
+  text-decoration: none;
+  border-radius: 5px;
+  transition: background-color 0.3s ease;
+}
+
+.link-button:hover {
+  background-color: #0056b3;
+}
+.banner {
+  background-color: #dc3545; /* Red banner background */
+  color: #fff; /* White text color */
+  text-align: center;
+  padding: 20px;
+}
+
+.box-container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  margin: 20px;
+}
+
+.box {
+  background-color: #fff;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  padding: 20px;
+  margin: 10px;
+  width: 300px;
+  text-align: center;
+}
+
+.link-button {
+  display: inline-block;
+  padding: 10px 20px;
+  margin-top: 15px;
+  background-color: #007bff;
+  color: #fff;
+  text-decoration: none;
+  border-radius: 5px;
+  transition: background-color 0.3s ease;
+}
+
+.link-button:hover {
+  background-color: #0056b3;
+}
+.main {
+  width: 1200px;
+}
+.login-container {
+  width: 400px;
+  background-color: #ffffff;
+  padding: 40px;
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+/* Logo */
+.logo {
+  display: block;
+  margin: 0 auto 20px;
+  width: 70px;
+  height: 70px;
+  border-radius: 50%;
+}
+
+/* Form Title */
+.form-title {
+  text-align: center;
+  font-size: 24px;
+  margin-bottom: 20px;
+  color: #333333;
+}
+
+/* Form Input Fields */
+.input-field {
+  width: 100%;
+  padding: 12px;
+  margin-bottom: 20px;
+  border: 1px solid #cccccc;
+  border-radius: 4px;
+  font-size: 16px;
+}
+
+/* Radio Button Label */
+.radio-label {
+  margin-right: 15px;
+}
+
+/* Submit Button */
+.submit-button {
+  width: 100%;
+  padding: 12px;
+  background-color: #007bff;
+  color: #ffffff;
+  border: none;
+  border-radius: 4px;
+  font-size: 16px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.submit-button:hover {
+  background-color: #0056b3;
+}
+
+/* Additional Links */
+.link {
+  text-align: center;
+  margin-top: 10px;
+  font-size: 14px;
+}
+
+.link a {
+  text-decoration: none;
+  color: #007bff;
+}
+
+.link a:hover {
+  text-decoration: underline;
+}
+.sign-up-container {
+  max-width: 400px;
+  margin: 100px auto;
+  padding: 20px;
+  background-color: #fff;
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+/* Logo Image */
+.logo-image {
+  width: 70px;
+  height: 70px;
+  display: block;
+  margin: 0 auto 20px; /* Center logo image with bottom margin */
+  border-radius: 50%;
+}
+
+/* Form Title */
+.sign-up-container h2 {
+  text-align: center;
+  font-size: 24px;
+  margin-bottom: 20px;
+}
+
+/* Form Inputs */
+.sign-up-form input {
+  width: 100%;
+  padding: 12px;
+  margin-bottom: 15px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+}
+
+/* Radio Button Labels */
+.sign-up-form label {
+  margin-right: 15px;
+}
+
+/* Login Button */
+.sign-up-form button {
+  width: 100%;
+  padding: 12px;
+  background-color: #007bff;
+  color: #fff;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.sign-up-form button:hover {
+  background-color: #0056b3;
+}
+
+/* Forgot Password and Sign Up Links */
+.sign-up-form p {
+  margin-top: 10px;
+  text-align: center;
+}
+
+.sign-up-form p a {
+  text-decoration: none;
+  color: #007bff;
+}
+
+.sign-up-form p a:hover {
+  text-decoration: underline;
+}
+
+.container {
+  width: 400px;
+  background-color: #ffffff;
+  padding: 40px;
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  align-items: center;
+  margin: auto;
+}
+
+.header {
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+.header h1 {
+  font-size: 28px;
+  color: #333333;
+}
+
+.form-container {
+  width: 100%;
+}
+
+.form {
+  display: flex;
+  flex-direction: column;
+}
+
+label {
+  margin-bottom: 10px;
+  font-size: 16px;
+  color: #333333;
+}
+
+.input {
+  padding: 12px;
+  margin-bottom: 20px;
+  border: 1px solid #cccccc;
+  border-radius: 4px;
+  font-size: 16px;
+}
+
+.button {
+  padding: 12px;
+  background-color: #007bff;
+  color: #ffffff;
+  border: none;
+  border-radius: 4px;
+  font-size: 16px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.button:hover {
+  background-color: #6783a0;
+}
+.container2.container {
+  width: 80%;
+  margin: 0 auto;
+  padding: 20px;
+  background-color: #f5f5f5;
+  border-radius: 8px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.header {
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+.header h2 {
+  font-size: 28px;
+  color: #333333;
+}
+
+.question {
+  margin-bottom: 20px;
+  font-size: 18px;
+  color: #333333;
+}
+
+.answer-container {
+  display: flex;
+  flex-direction: column;
+}
+
+.answer-button {
+  padding: 12px;
+  margin-bottom: 10px;
+  background-color: #007bff;
+  color: #ffffff;
+  border: none;
+  border-radius: 4px;
+  font-size: 16px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.answer-button:hover {
+  background-color: #0056b3;
+}
+
+.score {
+  text-align: center;
+  margin-top: 20px;
+  font-size: 20px;
+  color: #333333;
+}
+
+.result {
+  text-align: center;
+  margin-top: 20px;
+}
+
+.result button {
+  padding: 12px 20px;
+  background-color: #007bff;
+  color: #ffffff;
+  border: none;
+  border-radius: 4px;
+  font-size: 16px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.result button:hover {
+  background-color: #0056b3;
+}
+
+.quiz-history {
+  margin-top: 20px;
+}
+
+.quiz-result-box {
+  background-color: #84a4be;
+  padding: 15px;
+  margin-bottom: 10px;
+  border-radius: 8px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.quiz-result-box p {
+  font-size: 16px;
+  color: #333333;
+}
+
+@media (max-width: 768px) {
+  .container {
+    width: 90%;
+  }
+}
