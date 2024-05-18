@@ -13,6 +13,7 @@ const userSchema = new mongoose.Schema({
   userType: { type: String, enum: ['0', '1'], default: '0' }, // '0' for user, '1' for admin
   isAdmin: { type: Boolean, default: false }, // For identifying admin users
   secretId: { type: String }, // Secret ID for admin login
+  verbalScores: [{ type: Number, default: 0 }],
 });
 
 const User = mongoose.model("User", userSchema);

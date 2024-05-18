@@ -1,5 +1,7 @@
 import React, { useState } from "react";
 import Axios from "axios";
+import "./Login.css";
+
 import { Link, useNavigate } from "react-router-dom";
 
 const Login = () => {
@@ -64,7 +66,6 @@ const Login = () => {
 
   return (
     <div className="sign-up-container">
-      <img src="../image/logo.png" alt="" className="logo-image" />
       <h2>Login</h2>
       <form className="sign-up-form" onSubmit={handleSubmit}>
         <input
@@ -96,6 +97,7 @@ const Login = () => {
           </label>
           <label>
             <input
+              className="btn"
               type="radio"
               name="userType"
               value="1"

@@ -1,0 +1,132 @@
+.Container3 {
+  width: 100%;
+  height: 100vh;
+  background-color: #6d42bb;
+  display: flex;
+}
+
+.profile-section {
+  width: 300px;
+  background: rgb(244, 244, 245);
+  border-radius: 6px;
+  margin: 23px 34px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 20px;
+}
+
+.profile-info {
+  text-align: center;
+  margin-top: 20px;
+}
+
+.profile-info h2 {
+  margin-bottom: 10px;
+}
+
+.profile-info p {
+  margin-bottom: 5px;
+}
+
+.profile-info button {
+  background-color: #4caf50;
+  color: white;
+  border: none;
+  border-radius: 4px;
+  padding: 10px 20px;
+  cursor: pointer;
+  margin-top: 20px;
+}
+
+.profile-info button:hover {
+  background-color: #45a049;
+}
+
+.history-section {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.contest-section {
+  width: 800px;
+  background: rgb(255, 255, 255);
+  border-radius: 6px;
+  margin: 23px 34px;
+  display: flex;
+}
+
+.aptihistory,
+.verhis,
+.global {
+  flex: 1;
+  border-radius: 6px;
+  background-color: rgb(245, 235, 235);
+  margin: 0 16px;
+  padding: 20px;
+}
+
+.aptihistory h2,
+.verhis h2,
+.global h2 {
+  margin-bottom: 10px;
+}
+
+.aptihistory ul,
+.verhis ul,
+.global ul {
+  list-style-type: none;
+  padding: 0;
+}
+
+.aptihistory ul li,
+.verhis ul li,
+.global ul li {
+  margin-bottom: 5px;
+}
+.profile-info {
+  color: #333;
+}
+
+.profile-info h2 {
+  margin-bottom: 10px;
+  font-size: 24px;
+  background-color: #e9e2ee;
+  border-radius: 4px;
+}
+
+.profile-info p {
+  margin-bottom: 5px;
+  background-color: #c8d1d6;
+  border-radius: 4px;
+  padding: 10px;
+}
+.profileimg {
+  width: 100px;
+  height: 100px;
+  background-color: #a1a5a7;
+  border-radius: 50%;
+}
+.profile-additional-info {
+  margin-top: 10px;
+}
+
+.profile-additional-info p {
+  margin-bottom: 3px;
+}
+
+.profile-info button {
+  background-color: #4b4d97;
+  color: white;
+  border: none;
+  border-radius: 4px;
+  padding: 10px 20px;
+  cursor: pointer;
+  margin-top: 20px;
+}
+
+.profile-info button:hover {
+  background-color: #4b4c64;
+}

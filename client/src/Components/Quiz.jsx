@@ -1,87 +1,105 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import axios from "axios";
 
 const Quiz = () => {
-  const [userEmail, setUserEmail] = useState("");
-  const [quizType, setQuizType] = useState("");
-  const [score, setScore] = useState("");
+  const [questions, setQuestions] = useState([]);
+  const [currentQuestionIndex, setCurrentQuestionIndex] = useState(0);
+  const [selectedOption, setSelectedOption] = useState("");
+  const [score, setScore] = useState(0);
+  const [showResult, setShowResult] = useState(false);
 
-  const handleSubmit = async (e) => {
-    e.preventDefault();
+  useEffect(() => {
+    fetchQuestions();
+  }, []);
 
+  const fetchQuestions = async () => {
     try {
-      const response = await axios.post("http://localhost:3000/auth/save", {
-        userEmail,
-        quizType,
-        score: parseInt(score),
-      });
-
-      if (response.data.status) {
-        alert("Score saved successfully");
-        setUserEmail("");
-        setQuizType("");
-        setScore("");
-      } else {
-        alert("Failed to save score");
-      }
+      const response = await axios.get(
+        "https://opentdb.com/api.php?amount=5&type=multiple"
+      );
+      setQuestions(response.data.results);
     } catch (error) {
-      // Handle different error scenarios
-      if (error.response) {
-        // The request was made and the server responded with an error status code
-        console.log("Error Response:");
-        console.log(error.response.data);
-        console.log(error.response.status);
-        console.log(error.response.headers);
-        alert(`Failed to save score: ${error.response.data.error}`);
-      } else if (error.request) {
-        // The request was made but no response was received
-        console.log("Error Request:");
-        console.log(error.request);
-        alert("Failed to save score: No response received from server");
-      } else {
-        // Something happened in setting up the request that triggered an Error
-        console.log("General Error:");
-        console.log("Error", error.message);
-        alert("Failed to save score: An unexpected error occurred");
-      }
-      console.log("Error Config:");
-      console.log(error.config);
+      console.error("Error fetching questions:", error);
     }
   };
 
+  const handleOptionSelect = (option) => {
+    setSelectedOption(option);
+  };
+
+  const handleNextQuestion = () => {
+    const correctAnswer = questions[currentQuestionIndex].correct_answer;
+    if (selectedOption === correctAnswer) {
+      setScore(score + 1);
+    }
+    setSelectedOption("");
+    if (currentQuestionIndex < questions.length - 1) {
+      setCurrentQuestionIndex(currentQuestionIndex + 1);
+    } else {
+      setShowResult(true);
+    }
+  };
+
+  const restartQuiz = () => {
+    setQuestions([]);
+    setCurrentQuestionIndex(0);
+    setSelectedOption("");
+    setScore(0);
+    setShowResult(false);
+    fetchQuestions();
+  };
+
+  if (questions.length === 0) {
+    return <div>Loading...</div>;
+  }
+
+  const currentQuestion = questions[currentQuestionIndex];
+
   return (
-    <div>
-      <h1>Enter Quiz Score</h1>
-      <form onSubmit={handleSubmit}>
-        <label>Email:</label>
-        <input
-          type="email"
-          value={userEmail}
-          onChange={(e) => setUserEmail(e.target.value)}
-          required
-        />
-        <br />
-
-        <label>Quiz Type:</label>
-        <input
-          type="text"
-          value={quizType}
-          onChange={(e) => setQuizType(e.target.value)}
-          required
-        />
-        <br />
-
-        <label>Score:</label>
-        <input
-          type="number"
-          value={score}
-          onChange={(e) => setScore(e.target.value)}
-          required
-        />
-        <br />
-
-        <button type="submit">Submit Score</button>
-      </form>
+    <div className="quiz-container">
+      {showResult ? (
+        <div className="result">
+          <h2>Quiz Result</h2>
+          <p>
+            Your Score: {score} / {questions.length}
+          </p>
+          <button onClick={restartQuiz}>Restart Quiz</button>
+        </div>
+      ) : (
+        <div>
+          <h2>Question {currentQuestionIndex + 1}</h2>
+          <p>{currentQuestion.question}</p>
+          <div>
+            {currentQuestion.incorrect_answers.map((option, index) => (
+              <div key={index}>
+                <input
+                  type="radio"
+                  id={`option${index}`}
+                  name="options"
+                  value={option}
+                  checked={selectedOption === option}
+                  onChange={() => handleOptionSelect(option)}
+                />
+                <label htmlFor={`option${index}`}>{option}</label>
+              </div>
+            ))}
+            <input
+              type="radio"
+              id="correctOption"
+              name="options"
+              value={currentQuestion.correct_answer}
+              checked={selectedOption === currentQuestion.correct_answer}
+              onChange={() =>
+                handleOptionSelect(currentQuestion.correct_answer)
+              }
+            />
+            <label htmlFor="correctOption">
+              {currentQuestion.correct_answer}
+            </label>
+          </div>
+          <button onClick={handleNextQuestion}>Next</button>
+        </div>
+      )}
     </div>
   );
 };

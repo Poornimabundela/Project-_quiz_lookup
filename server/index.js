@@ -2,7 +2,6 @@ import express from "express";
 import dotenv from "dotenv";
 import mongoose from "mongoose";
 import UserRouter from "./routes/user.js"; // Import your user router
-import scoreRouter from "./routes/Scores.js";
 import cors from "cors";
 import cookieParser from "cookie-parser";
 
@@ -19,7 +18,6 @@ app.use(cookieParser());
 
 // Routes
 app.use("/auth", UserRouter); // Mount UserRouter under /auth
-app.use("/auth", scoreRouter); // Mount ScoreRouter under /auth
 
 // Error handling middleware (should come after routes)
 app.use((err, req, res, next) => {

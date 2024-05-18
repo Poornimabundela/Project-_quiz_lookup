@@ -4,7 +4,7 @@ import UserModel from "../models/User.js";
 import jwt from "jsonwebtoken";
 import nodemailer from "nodemailer";
 import dotenv from "dotenv";
-
+import QuestionModel from "../models/Question.js";
 dotenv.config();
 
 const router = express.Router();
@@ -211,6 +211,27 @@ router.get("/logout", (req, res) => {
 });
 
 
+router.post("/save-question", async (req, res) => {
+  const { question, answer, questionType, incorrectAnswers } = req.body;
+
+  try {
+    // Create a new question document
+    const newQuestion = new QuestionModel({
+      question,
+      answer,
+      questionType,
+      incorrectAnswers,
+    });
+
+    // Save the question to the database
+    await newQuestion.save();
+
+    return res.json({ status: true, message: "Question saved successfully" });
+  } catch (error) {
+    console.error("Error saving question:", error);
+    return res.status(500).json({ error: "Internal Server Error" });
+  }
+});
 
 
 
